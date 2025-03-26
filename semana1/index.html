@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Processos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gerenciador de Processos</h1>
+        <button id="novoProcessoBtn">+ Novo Processo</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Número do Processo</th>
+                    <th>Reclamante</th>
+                    <th>Reclamada</th>
+                    <th>Status</th>
+                    <th>Valor da Causa</th>
+                    <th>Data de Ajuizamento</th>
+                    <th>Cidade / UF</th>
+                    <th>Vara</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaProcessos">
+                <!-- Processos serão inseridos aqui via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal Ajustado -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Novo Processo</h2>
+            <form id="formProcesso" class="modal-form">
+                <input type="hidden" id="processoId">
+
+                <div class="form-group">
+                    <label for="numeroProcesso">Número do Processo</label>
+                    <input type="text" id="numeroProcesso" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reclamante">Reclamante</label>
+                    <input type="text" id="reclamante" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reclamada">Reclamada</label>
+                    <input type="text" id="reclamada" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option value="Em andamento">Em andamento</option>
+                        <option value="Concluído">Concluído</option>
+                        <option value="Encerrado">Encerrado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="valorCausa">Valor da Causa</label>
+                    <input type="number" id="valorCausa" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dataAjuizamento">Data de Ajuizamento</label>
+                    <input type="date" id="dataAjuizamento" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidade">Cidade / UF</label>
+                    <input type="text" id="cidade" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="vara">Vara</label>
+                    <input type="text" id="vara" required>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit">Salvar</button>
+                    <button type="button" id="limparBtn">Limpar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
