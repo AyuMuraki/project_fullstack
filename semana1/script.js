@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("processos", JSON.stringify(processos));
     }
 
+    // Atualiza a tabela de processos
     function atualizarTabela() {
         tbody.innerHTML = "";
         processos.forEach((processo, index) => {
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Evento de clique na tabela
     tbody.addEventListener("click", (event) => {
         if (event.target.classList.contains("editar")) {
             const index = event.target.dataset.index;
@@ -59,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    
     novoProcessoBtn.addEventListener("click", () => {
         formProcesso.reset();
         document.getElementById("processoId").value = "";
@@ -85,9 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.display = "block";
     }
 
+
     limparBtn.addEventListener("click", () => {
         formProcesso.reset();
     });
+
 
     formProcesso.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -101,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         valorCausaInput = parseFloat(valorCausaInput); // Converte para número
 
 
+        
         const novoProcesso = {
             numero: document.getElementById("numeroProcesso").value,
             reclamante: document.getElementById("reclamante").value,
